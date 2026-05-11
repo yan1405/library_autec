@@ -95,8 +95,8 @@ body{font-family:var(--font-body);background:var(--off-white);color:var(--cinza-
   <h1>Biblioteca de Prompts AuTeC</h1>
   <p class="hero-sub">Selecione, copie e use diretamente no Claude, ChatGPT ou Gemini. Cada prompt foi calibrado para o contexto técnico-comercial da AuTeC.</p>
   <div class="hero-stats">
-    <div><span class="hero-stat-num">26</span><div class="hero-stat-label">Prompts disponíveis</div></div>
-    <div><span class="hero-stat-num">6</span><div class="hero-stat-label">Categorias</div></div>
+    <div><span class="hero-stat-num">33</span><div class="hero-stat-label">Prompts disponíveis</div></div>
+    <div><span class="hero-stat-num">7</span><div class="hero-stat-label">Categorias</div></div>
     <div><span class="hero-stat-num">7</span><div class="hero-stat-label">Fichas de equipamento</div></div>
   </div>
 </section>
@@ -126,44 +126,51 @@ body{font-family:var(--font-body);background:var(--off-white);color:var(--cinza-
 <div class="toast" id="toast">Prompt copiado com sucesso</div>
 
 <footer class="footer">
-  <p>AuTeC · Automation Technologies for Chemistry · Osasco/SP · Biblioteca de Prompts IA v1.0</p>
+  <p>AuTeC · Automation Technologies for Chemistry · Osasco/SP · Biblioteca de Prompts IA v2.0</p>
 </footer>
 
 <script>
 const PROMPT_INDEX=[
-{id:'C1',categoria:'Comercial',arquivo:'prompts/01_comercial.md',secao:'C1',titulo:'Prompt-Mestre de Proposta Comercial',descricao:'Gera proposta técnica completa — use com ficha de equipamento'},
-{id:'C2',categoria:'Comercial',arquivo:'prompts/01_comercial.md',secao:'C2',titulo:'Resposta a Objeção de Preço',descricao:'Três abordagens para responder objeções sem entrar em guerra de desconto'},
-{id:'C3',categoria:'Comercial',arquivo:'prompts/01_comercial.md',secao:'C3',titulo:'Follow-up Estruturado Pós-Proposta',descricao:'Mensagem de acompanhamento para cliente que não respondeu'},
-{id:'C4',categoria:'Comercial',arquivo:'prompts/01_comercial.md',secao:'C4',titulo:'Análise de RFP Recebida',descricao:'Analisa criticamente uma solicitação de proposta antes de responder'},
-{id:'C5',categoria:'Comercial',arquivo:'prompts/01_comercial.md',secao:'C5',titulo:'Comparativo de Equipamentos para Cliente',descricao:'Tabela comparativa entre equipamentos adaptada ao perfil do cliente'},
-{id:'P1',categoria:'Prospecção',arquivo:'prompts/02_prospeccao.md',secao:'P1',titulo:'Mapeamento de Empresas por Segmento',descricao:'Busca empresas com potencial de compra em segmento e região específicos'},
-{id:'P2',categoria:'Prospecção',arquivo:'prompts/02_prospeccao.md',secao:'P2',titulo:'Identificação de Decisores no LinkedIn',descricao:'Mapeia o profissional certo para contatar em uma empresa-alvo'},
-{id:'P3',categoria:'Prospecção',arquivo:'prompts/02_prospeccao.md',secao:'P3',titulo:'Script de Primeira Abordagem',descricao:'Mensagem de primeiro contato por WhatsApp ou email sem parecer spam'},
-{id:'P4',categoria:'Prospecção',arquivo:'prompts/02_prospeccao.md',secao:'P4',titulo:'Qualificação de Lead Inbound',descricao:'Classifica o lead e gera perguntas para descobrir se é oportunidade real'},
-{id:'T1',categoria:'Técnico',arquivo:'prompts/03_tecnico.md',secao:'T1',titulo:'Tradução de Especificação Técnica',descricao:'Reescreve specs em linguagem acessível sem perder precisão científica'},
-{id:'T2',categoria:'Técnico',arquivo:'prompts/03_tecnico.md',secao:'T2',titulo:'Resposta a Dúvida Técnica de Cliente',descricao:'Resposta calibrada para o nível técnico do interlocutor'},
-{id:'T3',categoria:'Técnico',arquivo:'prompts/03_tecnico.md',secao:'T3',titulo:'Comparativo Técnico entre Modelos',descricao:'Análise técnica comparativa para subsidiar recomendação fundamentada'},
-{id:'T4',categoria:'Técnico',arquivo:'prompts/03_tecnico.md',secao:'T4',titulo:'Análise de Brochura de Fornecedor',descricao:'Avalia criticamente material técnico antes de repassar ao cliente'},
-{id:'A1',categoria:'Administrativo',arquivo:'prompts/04_administrativo.md',secao:'A1',titulo:'Organização de Cadeia de E-mails',descricao:'Transforma thread longa em tabela com compromissos e pontos em aberto'},
-{id:'A2',categoria:'Administrativo',arquivo:'prompts/04_administrativo.md',secao:'A2',titulo:'Redação de Comunicado Interno',descricao:'Comunicado claro e direto para equipe ou sócios, sem burocracia'},
-{id:'A3',categoria:'Administrativo',arquivo:'prompts/04_administrativo.md',secao:'A3',titulo:'Análise Crítica de Contrato Recebido',descricao:'Identifica riscos e ambiguidades antes de assinar qualquer contrato'},
-{id:'A4',categoria:'Administrativo',arquivo:'prompts/04_administrativo.md',secao:'A4',titulo:'Estruturação de Ata de Reunião',descricao:'Transforma anotações brutas em ata com decisões, responsáveis e prazos'},
-{id:'CR1',categoria:'Crítica e Revisão',arquivo:'prompts/05_critica_revisao.md',secao:'CR1',titulo:'Crítico Implacável AuTeC',descricao:'Analisa textos da AuTeC com precisão cirúrgica e retorna versão corrigida'},
-{id:'CR2',categoria:'Crítica e Revisão',arquivo:'prompts/05_critica_revisao.md',secao:'CR2',titulo:'Validador de Proposta Antes do Envio',descricao:'Checklist de completude, consistência técnica e adequação ao cliente'},
-{id:'CR3',categoria:'Crítica e Revisão',arquivo:'prompts/05_critica_revisao.md',secao:'CR3',titulo:'Revisor de Tom Comercial',descricao:'Calibra o tom do texto para o perfil exato do interlocutor'},
-{id:'BP1',categoria:'Boas Práticas IA',arquivo:'prompts/06_boas_praticas_ia.md',secao:'BP1',titulo:'Inicialização de Projeto no Claude',descricao:'Configura um Projeto no Claude.ai com perguntas de refinamento de contexto'},
-{id:'BP2',categoria:'Boas Práticas IA',arquivo:'prompts/06_boas_praticas_ia.md',secao:'BP2',titulo:'Configuração Pessoal de IA',descricao:'Cria um system prompt personalizado completo para qualquer plataforma de IA'},
-{id:'BP3',categoria:'Boas Práticas IA',arquivo:'prompts/06_boas_praticas_ia.md',secao:'BP3',titulo:'Documentação de Conversa',descricao:'Gera Markdown estruturado da sessão para salvar e retomar depois'},
-{id:'BP4',categoria:'Boas Práticas IA',arquivo:'prompts/06_boas_praticas_ia.md',secao:'BP4',titulo:'Recuperação de Contexto',descricao:'Retoma trabalho de sessão anterior sem perder nenhuma informação'},
-{id:'BP5',categoria:'Boas Práticas IA',arquivo:'prompts/06_boas_praticas_ia.md',secao:'BP5',titulo:'Divisão de Tarefa Complexa em Etapas',descricao:'A IA apresenta o plano para aprovação antes de executar qualquer coisa'},
-{id:'BP6',categoria:'Boas Práticas IA',arquivo:'prompts/06_boas_praticas_ia.md',secao:'BP6',titulo:'Crítico Implacável (Versão Genérica)',descricao:'Versão universal do crítico — aplicável a qualquer texto ou ideia'},
-{id:'F1',categoria:'Fichas de Equipamento',arquivo:'prompts/07_fichas_equipamentos.md',secao:'F1',titulo:'Ficha — Cromatografia',descricao:'Contexto técnico para propostas de Flash, HPLC e HPTLC'},
-{id:'F2',categoria:'Fichas de Equipamento',arquivo:'prompts/07_fichas_equipamentos.md',secao:'F2',titulo:'Ficha — Evaporação de Solventes',descricao:'Contexto técnico para rotaevaporadores e concentradores'},
-{id:'F3',categoria:'Fichas de Equipamento',arquivo:'prompts/07_fichas_equipamentos.md',secao:'F3',titulo:'Ficha — Preparo de Amostras',descricao:'Contexto técnico para SPE, QuEChERS e filtração preparativa'},
-{id:'F4',categoria:'Fichas de Equipamento',arquivo:'prompts/07_fichas_equipamentos.md',secao:'F4',titulo:'Ficha — Análise de Processos e Estabilidade',descricao:'Contexto técnico para câmaras de estabilidade e PAT'},
-{id:'F5',categoria:'Fichas de Equipamento',arquivo:'prompts/07_fichas_equipamentos.md',secao:'F5',titulo:'Ficha — Síntese Orgânica e de Peptídeos',descricao:'Contexto técnico para sintetizadores e reatores de síntese'},
-{id:'F6',categoria:'Fichas de Equipamento',arquivo:'prompts/07_fichas_equipamentos.md',secao:'F6',titulo:'Ficha — Reatores de Batelada',descricao:'Contexto técnico para reatores de vidro, aço e acessórios'},
-{id:'F7',categoria:'Fichas de Equipamento',arquivo:'prompts/07_fichas_equipamentos.md',secao:'F7',titulo:'Ficha — Geradores de Gases',descricao:'Contexto técnico para geradores de N2, H2, ar sintético e O2'}
+{id:'C1',categoria:'Comercial',arquivo:'prompts/02_comercial_v2.md',secao:'C1',titulo:'Prompt-Mestre de Proposta Comercial',descricao:'Gera proposta técnica consultiva usando a ficha do equipamento'},
+{id:'C2',categoria:'Comercial',arquivo:'prompts/02_comercial_v2.md',secao:'C2',titulo:'Resposta a Objeção de Preço',descricao:'Responde objeções sem guerra de desconto'},
+{id:'C3',categoria:'Comercial',arquivo:'prompts/02_comercial_v2.md',secao:'C3',titulo:'Follow-up Estruturado Pós-Proposta',descricao:'Gera mensagens de acompanhamento sem pressão'},
+{id:'C4',categoria:'Comercial',arquivo:'prompts/02_comercial_v2.md',secao:'C4',titulo:'Análise de RFP Recebida',descricao:'Analisa criticamente cotação, RFP ou edital'},
+{id:'C5',categoria:'Comercial',arquivo:'prompts/02_comercial_v2.md',secao:'C5',titulo:'Comparativo de Equipamentos para Cliente',descricao:'Compara equipamentos e recomenda opção adequada'},
+{id:'P1',categoria:'Prospecção',arquivo:'prompts/03_prospeccao_v2.md',secao:'P1',titulo:'Mapeamento de Empresas por Segmento',descricao:'Busca empresas com potencial por setor e região'},
+{id:'P2',categoria:'Prospecção',arquivo:'prompts/03_prospeccao_v2.md',secao:'P2',titulo:'Identificação de Decisores no LinkedIn',descricao:'Mapeia cargos decisores e influenciadores'},
+{id:'P3',categoria:'Prospecção',arquivo:'prompts/03_prospeccao_v2.md',secao:'P3',titulo:'Script de Primeira Abordagem',descricao:'Gera primeiro contato para WhatsApp/email sem spam'},
+{id:'P4',categoria:'Prospecção',arquivo:'prompts/03_prospeccao_v2.md',secao:'P4',titulo:'Qualificação de Lead Inbound',descricao:'Classifica lead e gera perguntas de qualificação'},
+{id:'P5',categoria:'Prospecção',arquivo:'prompts/03_prospeccao_v2.md',secao:'P5',titulo:'Fit Técnico-Comercial por Marca',descricao:'Determina qual marca/linha AuTeC tem maior aderência a uma conta'},
+{id:'T1',categoria:'Técnico',arquivo:'prompts/04_tecnico_v2.md',secao:'T1',titulo:'Tradução de Especificação Técnica',descricao:'Traduz specs sem perder precisão'},
+{id:'T2',categoria:'Técnico',arquivo:'prompts/04_tecnico_v2.md',secao:'T2',titulo:'Resposta a Dúvida Técnica de Cliente',descricao:'Responde pergunta técnica calibrada por perfil'},
+{id:'T3',categoria:'Técnico',arquivo:'prompts/04_tecnico_v2.md',secao:'T3',titulo:'Comparativo Técnico entre Modelos',descricao:'Compara modelos para recomendação técnica'},
+{id:'T4',categoria:'Técnico',arquivo:'prompts/04_tecnico_v2.md',secao:'T4',titulo:'Análise de Brochura de Fornecedor',descricao:'Avalia criticamente material técnico'},
+{id:'T5',categoria:'Técnico',arquivo:'prompts/04_tecnico_v2.md',secao:'T5',titulo:'Planejamento de Demonstração Técnica',descricao:'Prepara uma demonstração ou teste com cliente'},
+{id:'T6',categoria:'Técnico',arquivo:'prompts/04_tecnico_v2.md',secao:'T6',titulo:'Relatório Pós-Demonstração',descricao:'Transforma resultado de demo em documento acionável'},
+{id:'A1',categoria:'Administrativo',arquivo:'prompts/05_administrativo_v2.md',secao:'A1',titulo:'Organização de Cadeia de E-mails',descricao:'Transforma thread longa em tabela e pendências'},
+{id:'A2',categoria:'Administrativo',arquivo:'prompts/05_administrativo_v2.md',secao:'A2',titulo:'Redação de Comunicado Interno',descricao:'Gera comunicado claro para equipe/sócios'},
+{id:'A3',categoria:'Administrativo',arquivo:'prompts/05_administrativo_v2.md',secao:'A3',titulo:'Análise Crítica de Contrato Recebido',descricao:'Identifica riscos antes de jurídico'},
+{id:'A4',categoria:'Administrativo',arquivo:'prompts/05_administrativo_v2.md',secao:'A4',titulo:'Estruturação de Ata de Reunião',descricao:'Transforma reunião em ata rastreável'},
+{id:'A5',categoria:'Administrativo',arquivo:'prompts/05_administrativo_v2.md',secao:'A5',titulo:'Registro de Visita Técnica',descricao:'Documenta visita, treinamento ou demonstração'},
+{id:'A6',categoria:'Administrativo',arquivo:'prompts/05_administrativo_v2.md',secao:'A6',titulo:'Checklist de Instalação',descricao:'Organiza pré-instalação e instalação de equipamento'},
+{id:'CR1',categoria:'Crítica e Revisão',arquivo:'prompts/06_critica_revisao_v2.md',secao:'CR1',titulo:'Crítico Implacável AuTeC',descricao:'Analisa qualquer texto e corrige'},
+{id:'CR2',categoria:'Crítica e Revisão',arquivo:'prompts/06_critica_revisao_v2.md',secao:'CR2',titulo:'Validador de Proposta Antes do Envio',descricao:'Checklist de completude, consistência e adequação'},
+{id:'CR3',categoria:'Crítica e Revisão',arquivo:'prompts/06_critica_revisao_v2.md',secao:'CR3',titulo:'Revisor de Tom Comercial',descricao:'Calibra texto para perfil técnico, executivo ou compras'},
+{id:'CR4',categoria:'Crítica e Revisão',arquivo:'prompts/06_critica_revisao_v2.md',secao:'CR4',titulo:'Auditor Técnico-Comercial',descricao:'Audita risco técnico, comercial e regulatório antes de envio externo'},
+{id:'BP1',categoria:'Boas Práticas IA',arquivo:'prompts/07_boas_praticas_ia_v2.md',secao:'BP1',titulo:'Inicialização de Projeto AuTeC no Claude/ChatGPT',descricao:'Configura projeto especializado AuTeC'},
+{id:'BP2',categoria:'Boas Práticas IA',arquivo:'prompts/07_boas_praticas_ia_v2.md',secao:'BP2',titulo:'Configuração Pessoal de IA',descricao:'Cria system prompt pessoal'},
+{id:'BP3',categoria:'Boas Práticas IA',arquivo:'prompts/07_boas_praticas_ia_v2.md',secao:'BP3',titulo:'Documentação de Conversa',descricao:'Documenta sessão longa'},
+{id:'BP4',categoria:'Boas Práticas IA',arquivo:'prompts/07_boas_praticas_ia_v2.md',secao:'BP4',titulo:'Recuperação de Contexto',descricao:'Retoma trabalho anterior'},
+{id:'BP5',categoria:'Boas Práticas IA',arquivo:'prompts/07_boas_praticas_ia_v2.md',secao:'BP5',titulo:'Divisão de Tarefa Complexa',descricao:'Planeja antes de executar'},
+{id:'BP6',categoria:'Boas Práticas IA',arquivo:'prompts/07_boas_praticas_ia_v2.md',secao:'BP6',titulo:'Crítico Implacável Genérico',descricao:'Critica material fora do contexto AuTeC'},
+{id:'BP7',categoria:'Boas Práticas IA',arquivo:'prompts/07_boas_praticas_ia_v2.md',secao:'BP7',titulo:'Validador de Evidência Técnica',descricao:'Checa se uma afirmação técnica pode ser usada'},
+{id:'F1',categoria:'Fichas de Equipamento',arquivo:'prompts/01_fichas_equipamentos_v2.md',secao:'F1',titulo:'Ficha — Cromatografia',descricao:'Contexto técnico para propostas de Flash, HPLC e HPTLC'},
+{id:'F2',categoria:'Fichas de Equipamento',arquivo:'prompts/01_fichas_equipamentos_v2.md',secao:'F2',titulo:'Ficha — Evaporação de Solventes',descricao:'Contexto técnico para evaporadores e concentradores'},
+{id:'F3',categoria:'Fichas de Equipamento',arquivo:'prompts/01_fichas_equipamentos_v2.md',secao:'F3',titulo:'Ficha — Preparo de Amostras',descricao:'Contexto técnico para SPE, filtração e purificação'},
+{id:'F4',categoria:'Fichas de Equipamento',arquivo:'prompts/01_fichas_equipamentos_v2.md',secao:'F4',titulo:'Ficha — Análise de Processos e Estabilidade',descricao:'Contexto técnico para LUM, CEM e estabilidade'},
+{id:'F5',categoria:'Fichas de Equipamento',arquivo:'prompts/01_fichas_equipamentos_v2.md',secao:'F5',titulo:'Ficha — Síntese Orgânica e de Peptídeos',descricao:'Contexto técnico para sintetizadores e reatores de síntese'},
+{id:'F6',categoria:'Fichas de Equipamento',arquivo:'prompts/01_fichas_equipamentos_v2.md',secao:'F6',titulo:'Ficha — Reatores de Batelada',descricao:'Contexto técnico para reatores de vidro, batelada e acessórios'},
+{id:'F7',categoria:'Fichas de Equipamento',arquivo:'prompts/01_fichas_equipamentos_v2.md',secao:'F7',titulo:'Ficha — Geradores de Gases',descricao:'Contexto técnico para geradores de N₂, H₂, ar sintético e O₂'}
 ];
 
 const TAG_COLORS={
@@ -267,14 +274,14 @@ async function loadPrompt(p){
 }
 
 function extrairSecao(md,id){
-  const regex=new RegExp('##\\s+'+id+'\\s*—','g');
+  const regex=new RegExp('#+\\s+'+id+'\\s*—','g');
   const match=regex.exec(md);
   if(!match)return null;
   const start=match.index;
   const rest=md.slice(start);
-  const nextSection=rest.slice(1).search(/\n## /);
+  const nextSection=rest.slice(1).search(/\n#{1,2} [A-Z]+[0-9]* —/);
   const secBlock=nextSection===-1?rest:rest.slice(0,nextSection+1);
-  const codeMatch=secBlock.match(/```\n?([\s\S]*?)```/);
+  const codeMatch=secBlock.match(/```(?:md)?\n?([\s\S]*?)```/);
   return codeMatch?codeMatch[1].trim():null;
 }
 
